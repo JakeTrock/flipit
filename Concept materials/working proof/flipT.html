@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FlipT</title>
+    <style type="text/css">
+    canvas {
+        border: 1px solid red;
+        width: 512px;
+    }
+
+    #ct {
+        width: 170px;
+        height: 170px;
+        padding-left: 1px;
+    }
+
+    #sd {
+        width: 64px;
+        height: 64px;
+        border: 1px solid black;
+        resize: horizontal;
+        overflow: hidden;
+        display: inline-block;
+    }
+
+    #center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #pop {
+        position: absolute;
+        border: 1px solid red;
+        display: none;
+    }
+
+    #popin h2 {
+        font-family: helvetica;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="center"><span><button style="height:512px;vertical-align:top" class="interface" onclick="vue('bk');">◀</button><canvas id="okb" width="512px" height="512px"></canvas><button style="height:512px;vertical-align:top;" class="interface" onclick="vue('fw');">▶</button></span></div>
+    <hr style="border-top: 1px solid red">
+    <div id="center">
+        <span>
+            <a onclick="dtype=0"><img src="type0.png" /></a>
+            <a onclick="dtype=1"><img src="type1.png" /></a>
+            <a onclick="dtype=2"><img src="type2.png" /></a>
+        </span>
+    </div>
+    <hr style="border-top: 1px solid red">
+    <input type="range" id="sz" value="1" step="1" min="1" max="40" style="width:99%" />
+    <hr style="border-top: 1px solid red">
+    <div id="center">
+        <span>
+            <a onclick="undo();"><img src="undo.png" /></a>
+            <a onclick="redo();"><img src="redo.png" /></a>
+            <a onclick="tool='pen'"><img src="pencil.png" /></a>
+            <a onclick="tool='eraser'"><img src="eraser.png" /></a>
+            <a onclick="tool='bucket'"><img src="bucket.png" /></a>
+            <input id="cl" style="width:66px;height:66px;" onchange="curColor = document.getElementById('cl').value" type="color">
+            <a onclick="showrec();"><img src="mic.png" /></a>
+            <a onclick="runframes();startRecording();"><img src="upload.png" /></a>
+        </span>
+    </div>
+    <hr style="border-top: 1px solid red">
+    <div id="tools">
+        <div style="width:99%;height:20%;border: 1px solid red;">
+            <span>
+                <div style="width:99%;height:20%;white-space:nowrap;overflow:scroll;overflow-y:hidden;" id="frames"></div>
+            </span>
+        </div>
+    </div>
+    </div>
+</body>
+<div id="hide">
+    <canvas id="seccv" width="512px" height="512px"></canvas>
+</div>
+<div id="pop">
+    <div id="popin">
+        <h2 id="center">Input a file:</h2>
+        <div id="center"><input type="file" accept="audio/ogg,audio/mp3"></div>
+        <hr>
+        <h2 id="center">Or</h2>
+        <hr>
+        <h2 id="center">Record audio:</h2>
+        <canvas id="canvas" width="500" height="200"></canvas>
+    </div>
+</div>
+<script src="oe.js"></script>
+
+</html>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="53"
+   height="53"
+   viewBox="0 0 53 53"
+   version="1.1"
+   id="svg39"
+   sodipodi:docname="favorite.svg"
+   inkscape:version="0.92.4 (f8dce91, 2019-08-02)">
+  <metadata
+     id="metadata43">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1022"
+     id="namedview41"
+     showgrid="false"
+     inkscape:zoom="4.4528302"
+     inkscape:cx="26.5"
+     inkscape:cy="71.415254"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Community Star Button - Default" />
+  <title
+     id="title2">Group 3</title>
+  <desc
+     id="desc4">Created using Figma</desc>
+  <g
+     id="g14"
+     transform="translate(-24484,-42324)">
+    <g
+       id="Community Star Button - Default">
+      <path
+         style="opacity:0.97441861;fill:#ff0000;fill-opacity:1;stroke:#fffdfd;stroke-width:0.22457626;stroke-opacity:1"
+         d="m 24506.996,42370.999 c -4.247,-0.872 -8.103,-3.01 -11.037,-6.12 -1.876,-1.989 -2.709,-3.204 -3.815,-5.563 -1.495,-3.191 -1.841,-4.856 -1.841,-8.861 0,-2.847 0.09,-3.796 0.474,-5.21 2.226,-8.113 8.86,-14.152 16.989,-15.463 2.332,-0.376 6.488,-0.16 8.762,0.456 2.088,0.565 4.934,1.883 6.525,3.02 2.889,2.066 5.679,5.442 7.083,8.57 1.391,3.099 1.67,4.54 1.67,8.627 0,3.171 -0.07,3.958 -0.504,5.454 -2.226,7.722 -8.274,13.437 -15.88,15.008 -2.387,0.492 -6.242,0.53 -8.426,0.08 z"
+         id="path890"
+         inkscape:connector-curvature="0" />
+      <path
+         sodipodi:type="star"
+         style="opacity:0.97441861;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-opacity:1"
+         id="path892"
+         sodipodi:sides="5"
+         sodipodi:cx="24511.172"
+         sodipodi:cy="42350.275"
+         sodipodi:r1="14.261919"
+         sodipodi:r2="7.6726842"
+         sodipodi:arg1="0.12630812"
+         sodipodi:arg2="0.75462665"
+         inkscape:flatsided="false"
+         inkscape:rounded="0"
+         inkscape:randomized="0"
+         d="m 24525.32,42352.07 -8.558,3.459 -2.927,8.755 -5.934,-7.07 -9.231,-0.08 4.89,-7.829 -2.778,-8.803 8.957,2.232 7.514,-5.363 0.645,9.208 z"
+         inkscape:transform-center-x="-0.82303243"
+         inkscape:transform-center-y="0.55518307" />
+    </g>
+  </g>
+  <defs
+     id="defs37">
+    <filter
+       id="filter0_d"
+       filterUnits="userSpaceOnUse"
+       x="24484"
+       y="42324"
+       width="53"
+       height="53"
+       color-interpolation-filters="sRGB">
+      <feFlood
+         flood-opacity="0"
+         result="BackgroundImageFix"
+         id="feFlood20" />
+      <feColorMatrix
+         in="SourceAlpha"
+         type="matrix"
+         values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"
+         id="feColorMatrix22" />
+      <feOffset
+         dx="0"
+         dy="2"
+         id="feOffset24" />
+      <feGaussianBlur
+         stdDeviation="2.5"
+         id="feGaussianBlur26" />
+      <feColorMatrix
+         type="matrix"
+         values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"
+         id="feColorMatrix28" />
+      <feBlend
+         mode="normal"
+         in2="BackgroundImageFix"
+         result="effect1_dropShadow"
+         id="feBlend30" />
+      <feBlend
+         mode="normal"
+         in="SourceGraphic"
+         in2="effect1_dropShadow"
+         result="shape"
+         id="feBlend32" />
+    </filter>
+    <path
+       id="path0_fill"
+       d="M 42 21C 42 32.598 32.598 42 21 42C 9.40202 42 0 32.598 0 21C 0 9.40202 9.40202 0 21 0C 32.598 0 42 9.40202 42 21Z" />
+    <path
+       id="path1_fill"
+       d="M 14.6344 10.6529L 14.0336 4.77292L 16.1061 4.77292C 16.757 4.77292 17.2846 4.2387 17.2846 3.57969L 17.2846 1.19323C 17.2846 0.534219 16.757 0 16.1061 0L 2.74983 0C 2.09895 0 1.57133 0.534219 1.57133 1.19323L 1.57133 3.57969C 1.57133 4.2387 2.09895 4.77292 2.74983 4.77292L 4.82236 4.77292L 4.22157 10.6529C 1.83968 11.7742 0 13.7848 0 16.3075C 0 16.9665 0.527623 17.5007 1.1785 17.5007L 7.85665 17.5007L 7.85665 22.6717C 7.85665 22.7335 7.87084 22.7944 7.89814 22.8496L 9.07664 25.2361C 9.22105 25.5285 9.63465 25.5291 9.77936 25.2361L 10.9579 22.8496C 10.9851 22.7944 10.9993 22.7335 10.9994 22.6717L 10.9994 17.5007L 17.6775 17.5007C 18.3284 17.5007 18.856 16.9665 18.856 16.3075C 18.856 13.7628 16.9909 11.7623 14.6344 10.6529Z" />
+  </defs>
+</svg>
