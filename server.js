@@ -6,6 +6,7 @@ const passport = require('passport');
 const users = require('./routes/api/users');
 const profile = require('./routes/api/profile');
 const posts = require('./routes/api/posts');
+const keys = require('../../config/keys');
 
 
 const app = express();
@@ -20,7 +21,7 @@ app.use(bodyParser.json());
 // Connect to MongoDB
 
 mongoose
-    .connect("mongoURIFILLMEPLZ")
+    .connect(keys.url)
     .then(() => console.log('Mongodb Connected'))
     .catch(err => console.log(err));
 
