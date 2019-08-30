@@ -1,17 +1,34 @@
 <html>
-  <body>
+
+<body>
     login
-    <form>
-      
+    <form method='post' id="logform" encType="multipart/form-data">
+        name
+        <input type="text" name="name" />
+        email
+        <input type="text" name="email" />
+        password
+        <input type="text" name="password" />
+        <button onclick="send('http://192.168.1.49:5000/api/users/register','logform');">register</button>
     </form>
     upload
-    <form ref='uploadForm' 
-      id='uploadForm' 
-      action='http://192.168.1.49:5000/upload' 
-      method='post' 
-      encType="multipart/form-data">
+    <form id="upload" method='post' encType="multipart/form-data">
         <input type="file" name="sampleFile" />
-        <input type='submit' value='Upload!' />
-    </form>     
-  </body>
+        <input type="text" name="name" />
+        <button onclick="send('http://192.168.1.49:5000/api/posts','logform');">upload</button>
+    </form>
+</body>
+<script type="text/javascript">
+function send(url,formData) {
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: JSON.stringify($('#'+formData).serializeArray()),
+        success: function() {console.log("success")},
+        dataType: "json",
+        contentType: "application/json"
+    });
+}
+</script>
+
 </html>
