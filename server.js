@@ -6,7 +6,7 @@ const passport = require('passport');
 const users = require('./routes/api/users');
 const profile = require('./routes/api/profile');
 const posts = require('./routes/api/posts');
-const keys = require('../../config/keys');
+const keys = require('./config/keys');
 
 
 const app = express();
