@@ -71,7 +71,7 @@ router.post('/', passport.authenticate('jwt', {
         if (err)return res.status(500).send(err);
     });
     const newPost = new Post({
-        video: 'thisuuid',
+        video: thisuuid,
         name: req.body.name,
         avatar: req.body.avatar,
         user: req.user.id

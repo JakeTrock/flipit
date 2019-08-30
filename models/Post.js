@@ -7,7 +7,7 @@ const PostSchema = new Schema({
         ref: 'user'
     },
     video: {
-        type: String,//must be in base64 webm format
+        type: String,
         required: true
     },
     name: {
