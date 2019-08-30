@@ -1,4 +1,4 @@
 module.exports = {
-    url: 'yourmLaburi',
+    url: "mongodb://localhost/flipit",
     secretOrKey: 'anythingyouwant'
 };
