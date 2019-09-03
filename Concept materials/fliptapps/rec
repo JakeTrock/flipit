@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <title>test</title>
+    <meta content="">
+    <style></style>
+</head>
+
+<body>
+    <canvas id="canvas" width="500" height="200"></canvas>
+    <button id="rec" disabled>record</button>
+</body>
+<script type="text/javascript">
+var cStream,
+    aStream,
+    vid,
+    recorder,
+    analyser,
+    dataArray,
+    bufferLength,
+    chunks = [];
+
+function clickHandler() {
+
+    this.textContent = 'stop recording';
+    cStream = canvas.captureStream();
+    cStream.addTrack(aStream.getAudioTracks()[0]);
+
+    recorder = new MediaRecorder(cStream);
+    recorder.start();
+
+    recorder.ondataavailable = saveChunks;
+
+    recorder.onstop = exportStream;
+
+    this.onclick = stopRecording;
+
+};
+
+function exportStream(e) {
+
+    if (chunks.length) {
+
+        var blob = new Blob(chunks)
+        var vidURL = URL.createObjectURL(blob);
+        //download vidURL
+    } else {
+
+        document.body.insertBefore(document.createTextNode('no data saved'), canvas);
+
+    }
+}
+
+function saveChunks(e) {
+
+    e.data.size && chunks.push(e.data);
+
+}
+
+function stopRecording() {
+
+    vid.pause();
+    this.parentNode.removeChild(this);
+    recorder.stop();
+
+}
+
+function initAudioStream(evt) {
+
+  
+    // just for the fancy canvas drawings
+    analyser = audioCtx.createAnalyser();
+    sourceNode.connect(analyser);
+
+    analyser.fftSize = 2048;
+    bufferLength = analyser.frequencyBinCount;
+    dataArray = new Uint8Array(bufferLength);
+    analyser.getByteTimeDomainData(dataArray);
+
+    // output to our headphones
+    sourceNode.connect(audioCtx.destination)
+
+
+    rec.onclick = clickHandler;
+    rec.disabled = false;
+};
+
+var loadVideo = function() {
+
+    vid = document.createElement('audio');
+    vid.crossOrigin = 'anonymous';
+    vid.oncanplay = initAudioStream;
+    vid.src = 'SET AUDIO SRC';
+
+
+}
+loadVideo();
+</script>
+
+</html>
