@@ -64,7 +64,7 @@ router.post('/register', (req, res) => {
                     newUser.password = hash;
                     newUser
                         .save()
-                        .then(res.json('{"status":"success"}'))
+                        .then(res.json({"status":"success"}))
                         //.then(user => res.json(user))
                         .catch(err => console.log(err));
                 });
