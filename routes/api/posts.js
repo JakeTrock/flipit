@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 const fileUpload = require('express-fileupload');
+const busboy = require('connect-busboy'); //middleware for form/file upload
 //Post model
 const Post = require('../../models/Post');
 
@@ -56,26 +57,35 @@ router.post('/', passport.authenticate('jwt', {
     session: false
 }), (req, res) => {
     var thisuuid = uuidv1();
-    const {
-        errors,
-        isValid
-    } = validatePostInput(req);
+    // const {
+    //     errors,
+    //     isValid
+    // } = validatePostInput(req);
 
-    if (!isValid) {
-        return res.status(400).json(errors);
-    }
-    let vidFile = req.files.vidFile;
+    // if (!isValid) {
+    //     return res.status(400).json(errors);
+    // }
 
-  // https://github.com/richardgirges/express-fileupload/tree/master/example#basic-file-upload
-    vidFile.mv('../../allvids/'+thisuuid+'.webm', function(err) {
-        if (err)return res.status(500).send(err);
+    var fstream;
+    req.pipe(req.busboy);
+    req.busboy.on('file', function(fieldname, file, filename) {
+        console.log("Uploading: " + filename);
+
+        //Path where image will be uploaded
+        fstream = fs.createWriteStream('../../allvids/' + thisuuid + '.webm');
+        file.pipe(fstream);
+        fstream.on('close', function() {
+            console.log("Upload Finished of " + filename);
+            res.redirect('back'); //where to go next
+        });
+        const newPost = new Post({
+            video: thisuuid,
+            name: filename,
+            avatar: req.body.avatar,
+            user: req.user.id
+        });
     });
-    const newPost = new Post({
-        video: thisuuid,
-        name: req.body.name,
-        avatar: req.body.avatar,
-        user: req.user.id
-    });
+
 
     newPost.save().then(post => res.json(post));
 });

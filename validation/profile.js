@@ -7,7 +7,7 @@ module.exports = function validateProfileInput(data) {
     //important about empty string.
     data.handle = !isEmpty(data.handle) ? data.handle : '';
     data.status = !isEmpty(data.status) ? data.status : '';
-    data.skills = !isEmpty(data.skills) ? data.skills : '';
+    data.skills = !isEmpty(data.skills) ? data.skills : '';//TODO:CHECK IF WEBSITE IS VALID, THEN REMOVE WEBSITE IF NECESARY TO SAVE SPACE
 
     if (!Validator.isLength(data.handle, {
             min: 2,
