@@ -84,10 +84,10 @@ router.post('/', passport.authenticate('jwt', {
             avatar: req.body.avatar,
             user: req.user.id
         });
+        newPost.save().then(post => res.json(post));
     });
 
 
-    newPost.save().then(post => res.json(post));
 });
 
 // @route DELETE api/post/:id
