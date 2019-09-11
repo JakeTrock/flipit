@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 const fileUpload = require('express-fileupload');
+const busboy = require('busboy-express');
 //Post model
 const Post = require('../../models/Post');
 
@@ -54,7 +55,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', passport.authenticate('jwt', {
     session: false
-}), (req, res) => {
+}), upload.single('vid'),(req, res) => {
     var thisuuid = uuidv1();
     // const {
     //     errors,
@@ -64,23 +65,26 @@ router.post('/', passport.authenticate('jwt', {
     // if (!isValid) {
     //     return res.status(400).json(errors);
     // }
-    var file;
+    var fstream;
+    req.pipe(req.busboy);
+    req.busboy.on('file', function(fieldname, file, filename) {
+        console.log("Uploading: " + filename);
 
-    if (!req.files) {
-        res.send("File was not found");
-        return;
-    }
-
-    file = req.files.vid; // here is the field name of the form
-
-    res.send("File Uploaded");
-    const newPost = new Post({
-        video: thisuuid,
-        name: filename,
-        avatar: req.body.avatar,
-        user: req.user.id
+        //Path where image will be uploaded
+        fstream = fs.createWriteStream('../../allvids/' + thisuuid + '.webm');
+        file.pipe(fstream);
+        fstream.on('close', function() {
+            console.log("Upload Finished of " + filename);
+            res.redirect('back'); //where to go next
+        });
+        const newPost = new Post({
+            video: thisuuid,
+            name: filename,
+            avatar: req.body.avatar,
+            user: req.user.id
+        });
+        newPost.save().then(post => res.json(post));
     });
-    newPost.save().then(post => res.json(post));
 
 });
 
