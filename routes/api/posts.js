@@ -3,7 +3,6 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 const fileUpload = require('express-fileupload');
-const busboy = require('connect-busboy'); //middleware for form/file upload
 //Post model
 const Post = require('../../models/Post');
 
