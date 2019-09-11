@@ -65,28 +65,23 @@ router.post('/', passport.authenticate('jwt', {
     // if (!isValid) {
     //     return res.status(400).json(errors);
     // }
+    var file;
 
-    var fstream;
-    req.pipe(req.busboy);
-    req.busboy.on('file', function(fieldname, file, filename) {
-        console.log("Uploading: " + filename);
+    if (!req.files) {
+        res.send("File was not found");
+        return;
+    }
 
-        //Path where image will be uploaded
-        fstream = fs.createWriteStream('../../allvids/' + thisuuid + '.webm');
-        file.pipe(fstream);
-        fstream.on('close', function() {
-            console.log("Upload Finished of " + filename);
-            res.redirect('back'); //where to go next
-        });
-        const newPost = new Post({
-            video: thisuuid,
-            name: filename,
-            avatar: req.body.avatar,
-            user: req.user.id
-        });
-        newPost.save().then(post => res.json(post));
+    file = req.files.vid; // here is the field name of the form
+
+    res.send("File Uploaded");
+    const newPost = new Post({
+        video: thisuuid,
+        name: filename,
+        avatar: req.body.avatar,
+        user: req.user.id
     });
-
+    newPost.save().then(post => res.json(post));
 
 });
 
